@@ -1,0 +1,12 @@
+FROM python:3.8-slim-buster
+
+WORKDIR /app2
+
+RUN pip install fastapi && pip install requests \
+    && pip install fastapi uvicorn && pip install flask && pip install requests
+
+COPY . /app2
+
+EXPOSE 8080
+
+CMD python3 zip_code_to_weather.py
